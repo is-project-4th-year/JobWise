@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128873407313",
+    "project_id": "jobwise-f58d5",
+    "storage_bucket": "jobwise-f58d5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128873407313:android:c59ad78f8e2a747d08e970",
+        "android_client_info": {
+          "package_name": "com.example.jobwise_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsMljCV77SREdMISTFu3ioDDcK_aE-D88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

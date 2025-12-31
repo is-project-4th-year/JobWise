@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true
+  },
+  "files.watcherExclude": {
+    "**/.dart_tool/**": true,
+    "**/build/**": true,
+    "**/android/.gradle/**": true,
+    "**/android/app/build/**": true,
+    "**/android/app/src/main/java/io/flutter/plugins/**": true
+  },
+  "search.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true,
+    "**/android/.gradle": true,
+    "**/android/app/build": true
+  },
+  "java.autobuild.enabled": false,
+  "java.import.gradle.enabled": false
+}
