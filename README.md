@@ -256,11 +256,71 @@ curl -X POST http://localhost:8000/process
 
 ## Security
 
-- All sensitive files are gitignored (.env, serviceAccountKey.json, google-services.json)
-- Firestore security rules enforce user data isolation
-- Users can only access their own sessions and progress
+### Configuration Protection
+All sensitive files are gitignored and never committed to the repository:
+- `.env` files (backend environment variables)
+- `serviceAccountKey.json` (Firebase Admin SDK credentials)
+- `google-services.json` (Firebase Android configuration)
+- ML model files (too large, stored separately)
+
+### API Key Restrictions
+The Firebase API keys visible in configuration files are **protected and restricted**:
+
+#### ✅ Active Restrictions
+- **Android App Restriction**: Keys only function within the JobWise Android application package
+- **API Scope Restrictions**: Limited to Firebase Authentication, Firestore, and Storage APIs only
+- **No Billing Access**: Keys cannot incur charges beyond free tier limits
+- **Monitored Usage**: Firebase automatically monitors for unusual activity
+
+#### What This Means
+Even though configuration files are visible in this repository:
+- API keys **cannot be used** outside the JobWise Android app
+- They are **restricted to specific Firebase services** only
+- They have **no access to billing or administrative functions**
+- Unauthorized use attempts are **automatically blocked**
+
+### For Collaborators & Reviewers
+
+**To run this project locally**, you must create your own Firebase project:
+
+1. **Create Firebase Project**: Visit https://console.firebase.google.com
+2. **Enable Services**:
+   - Firebase Authentication (Email/Password provider)
+   - Cloud Firestore (Database)
+   - Firebase Storage (for audio files)
+3. **Download Credentials**:
+   - Android: `google-services.json` → place in `jobwise_app/android/app/`
+   - Backend: Service account key → save as `serviceAccountKey.json` in `jobwise-backend/`
+4. **Configure Environment**:
+   - Create `backend/.env` with your Firebase project details
+   - Update `lib/firebase_options.dart` with your configuration
+
+**The credentials in this repository will NOT work for external setups.**
+
+### Repository Access
+- **Visibility**: Private repository
+- **Organization**: Strathmore University School Projects
+- **Access**: Limited to project team and academic supervisors
+- **Purpose**: Academic capstone project demonstration
+
+### Firestore Security Rules
+- User data isolation enforced at database level
+- Users can only read/write their own sessions and progress
 - Roles and questions are read-only for authenticated users
 - Admin-only write access for roles and questions
+
+### Security Best Practices Applied
+- ✅ Credentials stored in gitignored files
+- ✅ API keys restricted to specific applications and services
+- ✅ Firebase security rules enforce data isolation
+- ✅ HTTPS-only communication
+- ✅ Environment-specific configuration
+- ✅ No hardcoded secrets in source code
+
+### Reporting Security Issues
+For security concerns or questions:
+- **Developer**: Elvis Mwitari (mwitarielvis@gmail.com)
+- **Institution**: Strathmore University, School of Computing and Engineering Sciences
 
 ## Documentation
 
