@@ -1,0 +1,23 @@
+# FastAPI
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Firebase
+firebase-admin==6.4.0
+
+# ML Models (MATCH YOUR COLAB VERSIONS)
+torch==2.2.0
+torchaudio==2.2.0
+transformers==4.37.2
+accelerate==0.27.2
+librosa==0.10.1
+soundfile==0.12.1
+numpy<2
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+jiwer==3.0.3

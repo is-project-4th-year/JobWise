@@ -1,0 +1,38 @@
+# Root-level gitignore for JobWise project
+
+# Python virtual environment (if created at root)
+venv/
+.venv/
+ENV/
+env/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code agent files
+.claude/
+
+# Logs
+*.log
+
+# Backend sensitive files
+jobwise-backend/.env
+jobwise-backend/serviceAccountKey.json
+jobwise-backend/models/
+jobwise-backend/venv/
+jobwise-backend/__pycache__/
+jobwise-backend/*.log
+jobwise-backend/uploads/
+jobwise-backend/audio_files/
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/

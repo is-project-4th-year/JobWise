@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Sensitive files
+.env
+serviceAccountKey.json
+*.pem
+
+# Models (too large for git)
+models/whisper-kenyan-finetuned/
+
+# Temporary files
+temp/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
